@@ -1,0 +1,129 @@
+<div class="sticky-top">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: #F08034 4px solid; font-size: 16px; color: #808080;">
+
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <form class="form-inline mt-4 text-center" action="/Productos/GetProducts" method="post" id="search">
+
+                <select class="myselect" name="searchFilter" id="searchFilter"></select>
+
+
+            </form>
+
+            <ul class="navbar-nav font-weight-bold h5 text-center">
+                <li class="nav-item active">
+
+                    <a class="nav-link hvr-underline-reveal text-dark" href="/Home/Index">
+                        <span style="color: #F08034;">
+                            <i class="fa fa-home fa-2x"></i>
+                            <br />
+                        </span>
+                        <span style="color: #808080;">Inicio</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add">
+
+
+                <li class="nav-item dropdown mt-3">
+                    <a class="nav-link dropdown-toggle hvr-underline-reveal" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color: #808080;">
+                        <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" href="/Productos/Index">Todos</a></li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=TABLEROS">Tablaroca</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS&SubClase=INTERIORES">Interiores</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=TABLEROS">Tableros</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS">Todos</a></li>
+
+                                <!--SOLO TABLEROS EXTERIORES Y ESTRUCTURALES-->
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS&SubClase=EXTERIORES">Exteriores</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS&SubClase=ESTRUCTURAL">Estructurales</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu ">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" href="/Productos/Index?Clase=PERFIL" style="color: #808080;">Perfiles Metálicos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PERFIL">Todos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PERFIL&SubClase=LIGERO">Ligeros</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PERFIL&SubClase=ESTRUCTURAL">Estructurales</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=PLAFONES">Plafones</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PLAFONES">Todos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PLAFONES&SubClase=61X61">61*61"</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=PLAFONES&SubClase=61X122">61*1.22"</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Home/Especialidades">Especialidades</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=SUSPENSIONES">Suspensiones</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=SUSPENSIONES">Todos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5 " href="/Productos/Index?Clase=SUSPENSIONES&SubClase=15_16">15/16"</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=SUSPENSIONES&SubClase=9_16">9/16"</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=COMPLEMENTOS">Complementos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS">Todos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=ADHESIVOS">Adhesivos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=CINTAS_MALLAS">Cintas y Mallas</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=ACCESORIOS">Accesorios</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=TORNILLOS">Tornillos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=AISLAMIENTOS">Aislamientos</a></li>
+                                <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=COMPLEMENTOS&SubClase=TAQUETES">Taquetes</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=RECUBRIMIENTOS">Recubrimientos</a></li>
+                        <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=HERRAMIENTAS">Herramientas</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/sucursales']">Sucursales</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Contact">Contacto</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Installation">¿Requieres Instalación?</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Rewards">Rewards</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+
+                </li>
+            </ul>
+
+
+        </div>
+
+    </nav>
+
+
+
+</div>
+
+
