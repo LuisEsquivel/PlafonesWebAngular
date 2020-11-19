@@ -1,0 +1,88 @@
+
+
+
+
+<section class="container bg-light mt-3">
+
+    <h2 class="abs-center mt-3 text-center" style="color:#f08034;">ÚNETE A NUESTRO EQUIPO DE TRABAJO</h2>
+
+    <br />
+
+    <div class="row mt-4 d-flex justify-content-center pl-4 pr-4">
+
+        <form id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-5">
+
+
+            <h3 class="text-center mt-4">¡Envía tus datos!</h3>
+
+            <div class="form-row">
+
+                <div class="form-group col-6">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre" name="NOMBRE_VAR" maxlength="50" required>
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="inputPassword4">Apellido</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido" name="APELLIDO_VAR" maxlength="50" required>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputCity" class="text-left">Teléfono</label>
+                    <input type="text" class="form-control soloNumeros col-12" id="TELEFONO_VAR" placeholder="Teléfono" name="TELEFONO_VAR" maxlength="15" minlength="8" pattern=".{8,}" required title="8 caracteres minimo">
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="inputPassword4">Email</label>
+                    <input type="email" class="form-control col-12" id="inputPassword4" placeholder="Email" name="EMAIL_VAR" maxlength="100" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputAddress">Dirección</label>
+                <textarea rows="3" type="text" class="form-control col-12" id="inputAddress" placeholder="Dirección" name="DIRECCION_VAR" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputExperience">Experiencia</label>
+                <textarea rows="3" type="text" class="form-control col-12" id="inputExperience" placeholder="Experiencia" name="EXPERIENCIA_VAR" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo"></textarea>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group col-8">
+                    <label for="inputAreaInteres">Área de interés</label>
+                    <select required id="inputAreaInteres" class="form-control" name="AREA_INTERES_VAR">
+                        <option value="" selected>--SELECCIONE--</option>
+                        <option value="Administración">Administración</option>
+                        <option value="Almacen">Almacen</option>
+                        <option value="Caja">Caja</option>
+                        <option value="Recepción">Recepción</option>
+                        <option value="Sistemas">Sistemas</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Otra">Otra</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group col-4">
+                    <br />
+                    <input type="hidden" name="ORIGEN_VAR" value="Home/JoinOurWorkTeam" />
+                    <button type="submit" class="btn btn-primary mt-2 form-control" onclick="Add('/Home/Email')">Enviar</button>
+                </div>
+
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+</section>

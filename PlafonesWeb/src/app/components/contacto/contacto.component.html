@@ -1,0 +1,58 @@
+
+<div class="container body-content">
+    <div class="containerIndex row">
+        <div class="col">
+            <h2 class="mt-4 pt-sanz-title font-weight-bold">¡Contacta a un experto!</h2>
+            <h4 class="pt-sanz-text">Gracias por ponerse en contacto con nosotros:</h4>
+        </div>
+    </div>
+</div>
+
+
+<section class="container-fluid bg-light mt-3">
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-8 col-sm-12 mt-4 text-center pb-4">
+            <img src="./assets/img/Contacto/contacto_img.jpg" class="ImgSucursalesIndex img-fluid rounded" style="height: 78% !important;" />
+        </div>
+
+
+        <div class="row mt-4 d-flex justify-content-center pl-4 pr-4" style="height:80% !important">
+
+            <form id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-12 col-sm-12 pb-4">
+
+                <div class="form-group ml-3">
+                    <h3 class="mt-3">¡Contacta a un Experto!</h3>
+                    <h5 class="mt-4">Nombre (requerido)</h5>
+                    <input type="text" class="form-control" name="NOMBRE_VAR" placeholder="Nombre" maxlength="50" required>
+                </div>
+
+                <div class="form-group ml-3">
+                    <h5>Tú correo electrónico (requerido)</h5>
+                    <input type="email" class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" required>
+                </div>
+
+                <div class="form-group ml-3">
+                    <h6>Teléfono</h6>
+                    <input type="text" class="form-control soloNumeros" name="TELEFONO_VAR" placeholder="Teléfono" maxlength="15" minlength="8" pattern=".{8,}" required title="8 caracteres minimo">
+                </div>
+
+                <div class="form-group ml-3">
+                    <h6>Mensaje</h6>
+                    <textarea rows="3" type="text" class="form-control" placeholder="Mensaje" name="MENSAJE_VAR" maxlength="200" minlength="10" pattern=".{10,}" required title="10 caracteres minimo"></textarea>
+                </div>
+
+                <div class="form-group mr-3 d-flex justify-content-xl-end d-flex justify-content-md-end  d-flex justify-content-sm-center d-flex justify-content-center">
+                        <input type="hidden" value="Contact/Email" name="ORIGEN_VAR" />
+                        <input type="submit" value="Enviar" class="btn btn-danger" onclick="Add('/Home/Email')" />
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+ 
+
+</section>

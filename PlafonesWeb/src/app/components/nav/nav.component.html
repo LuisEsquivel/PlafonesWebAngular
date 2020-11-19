@@ -20,7 +20,7 @@
             <ul class="navbar-nav font-weight-bold h5 text-center">
                 <li class="nav-item active">
 
-                    <a class="nav-link hvr-underline-reveal text-dark" href="/Home/Index">
+                    <a class="nav-link hvr-underline-reveal text-dark" [routerLink] = "['/home']">
                         <span style="color: #F08034;">
                             <i class="fa fa-home fa-2x"></i>
                             <br />
@@ -107,9 +107,9 @@
                     </ul>
                 </li>
                 <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/sucursales']">Sucursales</a></li>
-                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Contact">Contacto</a></li>
-                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Installation">¿Requieres Instalación?</a></li>
-                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" href="/Home/Rewards">Rewards</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/contacto']">Contacto</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/requieres-instalacion']">¿Requieres Instalación?</a></li>
+                <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/rewards']">Rewards</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
