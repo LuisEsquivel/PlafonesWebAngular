@@ -1,0 +1,58 @@
+
+
+
+<div class="container body-content mt-5">
+
+    <div class="containerIndex row my-flex-card">
+
+        <div class="col-md-12" style="border-bottom: #F08034 4px solid;">
+            <h2 class="Title-sections font-weight-bold">Productos</h2>
+        </div>
+
+
+            <div class="col-lg-4 col-sm-6 card-bordes mt-4" *ngFor="let item of productos">
+                <figure class="card card-product">
+
+                    <div class="img-wrap">
+                        <a href="~/Producto/Detalle/@item.URL_META_TAG_PROD_VAR">
+                            <img src="{{item.RutadefotoVar}}" alt="{{item.DescripcionImagenVar}}" class="img-fluid">
+                        </a>
+                    </div>
+    
+                    <figcaption class="info-wrap img-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <a href="./assets/Producto/Detalle/@item.URL_META_TAG_PROD_VAR">
+                                    <h5 class="product-name">{{item.NomProdVar}}</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h5 class="price-product font-weight-bold">{{item.CostoPromedioDec}} MXN IVA Inc. / {{item.UnidadMedidaVar}}</h5>
+                    
+                            </div>
+                        </div>
+
+              
+                                <div class="col">
+                            
+                    
+                                        <input name="FichaTecnicaName" type="hidden" value="@item.FICHA_TECNICA_URL_VAR" />
+                                        <button class="btn btn-danger btn-sm " type="submit">
+                                            <img src="./assets/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="35" height="45">
+                                        </button>
+                                    
+                                </div>
+                 
+
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col // -->
+
+            
+    </div>
+
+</div>

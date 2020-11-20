@@ -10,7 +10,7 @@ import {RequieresInstalacionComponent} from './components/requieres-instalacion/
 import {HomeComponent} from './components/home/home.component';
 import {AvisoPrivacidadComponent} from './components/aviso-privacidad/aviso-privacidad.component';
 import {UneteEquipoComponent} from './components/unete-equipo/unete-equipo.component';
-
+import {ProductosComponent} from './components/productos/productos.component';
 
 //Array de rutas
 const appRoutes: Routes =[
@@ -23,6 +23,7 @@ const appRoutes: Routes =[
     {path : 'requieres-instalacion', component:RequieresInstalacionComponent},
     {path : 'aviso-de-privacidad', component:AvisoPrivacidadComponent},
     {path : 'unete-al-equipo', component:UneteEquipoComponent},
+    {path : 'productos', component:ProductosComponent},
     //Ruta de error debe de ser la última siempre
    // {path : '**', component:ErrorComponent}
  ]

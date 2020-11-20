@@ -12,7 +12,12 @@
 
             <form class="form-inline mt-4 text-center" action="/Productos/GetProducts" method="post" id="search">
 
-                <select class="myselect" name="searchFilter" id="searchFilter"></select>
+                <select class="myselect" name="searchFilter" id="searchFilter">
+                   
+                     <option value='--SELECCIONE--' selected >  </option>;";
+                      <option  *ngFor="let item of productos"  [data-img-src]="item.RutadefotoVar" [value]= "item.NomProdVar" style="background-image:url({{item.RutadefotoVar}});" >  {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>";
+    
+                </select>
 
 
             </form>
@@ -31,14 +36,15 @@
             </ul>
 
             <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add">
+  
 
 
-                <li class="nav-item dropdown mt-3">
-                    <a class="nav-link dropdown-toggle hvr-underline-reveal" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li ngbDropdown  class="nav-item dropdown mt-3">
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle hvr-underline-reveal"  href='#' id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Productos
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color: #808080;">
-                        <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" href="/Productos/Index">Todos</a></li>
+                    <ul ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color: #808080;">
+                        <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" [routerLink] = "['/productos']">Todos</a></li>
 
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle font-weight-bold h5" style="color: #808080;" href="/Productos/Index?Clase=TABLEROS">Tablaroca</a>

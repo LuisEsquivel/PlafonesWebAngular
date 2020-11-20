@@ -20,6 +20,11 @@ import {FormsModule} from '@angular/forms';
 
 //Para trabajar con el objeto HTTP
 import {HttpClientModule} from '@angular/common/http';
+import { ProductosComponent } from './components/productos/productos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPopper } from 'angular-popper';
 
 
 @NgModule({
@@ -35,13 +40,18 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     CarruselHomeComponent,
     AvisoPrivacidadComponent,
-    UneteEquipoComponent
+    UneteEquipoComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    NgxPopper
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

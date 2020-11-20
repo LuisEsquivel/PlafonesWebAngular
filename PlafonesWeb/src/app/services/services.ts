@@ -7,15 +7,13 @@ import { Observable } from 'rxjs';
 
 export class Services {
 
-    public url: string = "https://localhost:44320/api/productos/get";
-
     constructor(private httpClient: HttpClient) {
     }
 
 
-    MostrarDestacados():Observable<any>{
+    Get(url):Observable<any>{
 
-        return this.httpClient.get(this.url);
+        return this.httpClient.get(url);
 
     }
 

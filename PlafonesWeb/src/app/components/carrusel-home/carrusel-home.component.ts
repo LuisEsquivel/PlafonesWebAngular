@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Services } from '../../services/services';
 import { Productos } from '../../models/productos';
+import { global } from '../../services/Global';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Productos } from '../../models/productos';
 export class CarruselHomeComponent implements OnInit {
 
   public productos : Productos[];
+  public g = new global();
 
   constructor(  
     private service : Services,
@@ -20,7 +22,7 @@ export class CarruselHomeComponent implements OnInit {
   ngOnInit(): void {
 
        
-    this.service.MostrarDestacados().subscribe( 
+    this.service.Get(this.g.urlBase+this.productos+this.g.method).subscribe( 
 
       response=>{
 
