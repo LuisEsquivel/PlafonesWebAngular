@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { Productos } from '../../models/productos';
 import { Services } from '../../services/services';
 import { global } from '../../services/Global';
+declare var $:any;
 
 
 @Component({
@@ -17,6 +18,7 @@ export class NavComponent implements OnInit {
   public g  = new global();
 
   constructor(private services : Services) { }
+  
 
   ngOnInit(): void {
 
@@ -38,6 +40,17 @@ export class NavComponent implements OnInit {
       
 
     );
+
+
+
+    $(document).ready( () =>{
+      $(".myselect").chosenImage({
+        placeholder_text_single: "BUSCAR PRODUCTO",
+        no_results_text: "Oops, no se encontró: ",
+        width: "calc(100% - 71.5%)",
+        search_contains: true //para que busque si escribes espacios
+      });
+    });
 
   }
 

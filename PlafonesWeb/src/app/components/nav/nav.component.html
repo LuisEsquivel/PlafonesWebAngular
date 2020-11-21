@@ -1,3 +1,5 @@
+
+
 <div class="sticky-top">
 
 
@@ -8,17 +10,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
 
             <form class="form-inline mt-4 text-center" action="/Productos/GetProducts" method="post" id="search">
 
                 <select class="myselect" name="searchFilter" id="searchFilter">
                    
-                     <option value='--SELECCIONE--' selected >  </option>;";
-                      <option  *ngFor="let item of productos"  [data-img-src]="item.RutadefotoVar" [value]= "item.NomProdVar" style="background-image:url({{item.RutadefotoVar}});" >  {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>";
+                     <option  *ngFor="let item of productos"  [data-img-src]="item.RutadefotoVar" [value]= "item.NomProdVar"  >  {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>
     
                 </select>
-
 
             </form>
 
