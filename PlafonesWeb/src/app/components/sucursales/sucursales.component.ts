@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sucursales } from '../../models/sucursales';
 import { Services } from '../../services/services';
-import { global } from '../../services/Global';
+import { global } from '../../services/global';
 import { DomSanitizer } from '@angular/platform-browser';
 
 

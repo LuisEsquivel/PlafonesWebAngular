@@ -1,7 +1,7 @@
 import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { Productos } from '../../models/productos';
 import { Services } from '../../services/services';
-import { global } from '../../services/Global';
+import { global } from '../../services/global';
 declare var $:any;
 
 
