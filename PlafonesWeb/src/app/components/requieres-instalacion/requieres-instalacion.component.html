@@ -27,7 +27,7 @@
 
             <div class="row mt-4 d-flex justify-content-center pl-4 pr-4">
 
-                    <form id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-12 col-sm-12" #RequieresInstalacionForm="ngForm" (ngSubmit)="onSubmit()" type="POST">
+                    <form name="form" id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-12 col-sm-12" #RequieresInstalacionForm="ngForm" (ngSubmit)="onSubmit()" type="POST">
 
                         <div class="form-group ml-3">
                             <h3 class="mt-3">¡Contacta a un Experto!</h3>
@@ -63,12 +63,13 @@
 
                             <input name="OrigenVar" type="hidden" #OrigenVar="ngModel" [(ngModel)]="email.OrigenVar"/>
 
-                            <input type="submit" value="Enviar" class="btn btn-danger" />
+                            <input type="submit" value="Enviar" class="btn btn-danger" [disabled]="RequieresInstalacionForm.invalid"/>
 
                         </div>
 
-
+                
                     </form>
+
 
                 </div>
 

@@ -10,7 +10,7 @@
 
     <div class="row mt-4 d-flex justify-content-center pl-4 pr-4">
 
-        <form id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-5">
+        <form id="form" style="border-radius: 20px; background: #001049;" class="text-white col-md-5" name="UneteAlEquipoForm" #UneteAlEquipoForm="ngForm" (ngSubmit)="onSubmit()" type="POST">
 
 
             <h3 class="text-center mt-4">¡Envía tus datos!</h3>
@@ -19,12 +19,12 @@
 
                 <div class="form-group col-6">
                     <label for="inputEmail4">Nombre</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre" name="NOMBRE_VAR" maxlength="50" required>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre" name="NombreVar" maxlength="50" required #NombreVar="ngModel" [(ngModel)]="email.NombreVar">
                 </div>
 
                 <div class="form-group col-6">
                     <label for="inputPassword4">Apellido</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido" name="APELLIDO_VAR" maxlength="50" required>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido" name="ApellidoVar" maxlength="50" required #ApellidoVar="ngModel" [(ngModel)]="email.ApellidoVar">
                 </div>
 
             </div>
@@ -32,34 +32,34 @@
             <div class="form-row">
                 <div class="form-group col-6">
                     <label for="inputCity" class="text-left">Teléfono</label>
-                    <input type="text" class="form-control soloNumeros col-12" id="TELEFONO_VAR" placeholder="Teléfono" name="TELEFONO_VAR" maxlength="15" minlength="8" pattern=".{8,}" required title="8 caracteres minimo">
+                    <input type="text" class="form-control soloNumeros col-12" id="TelefonoVar" placeholder="Teléfono" name="TelefonoVar" maxlength="15" minlength="8" pattern=".{8,}" required title="8 caracteres minimo" #TelefonoVar="ngModel" [(ngModel)]="email.TelefonoVar">
                 </div>
 
                 <div class="form-group col-6">
                     <label for="inputPassword4">Email</label>
-                    <input type="email" class="form-control col-12" id="inputPassword4" placeholder="Email" name="EMAIL_VAR" maxlength="100" required>
+                    <input type="email" class="form-control col-12" id="inputPassword4" placeholder="Email" name="CorreoVar" maxlength="100" #CorreoVar="ngModel" [(ngModel)]="email.CorreoVar" >
                 </div>
             </div>
 
 
             <div class="form-group">
                 <label for="inputAddress">Dirección</label>
-                <textarea rows="3" type="text" class="form-control col-12" id="inputAddress" placeholder="Dirección" name="DIRECCION_VAR" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo"></textarea>
+                <textarea rows="3" type="text" class="form-control col-12" id="inputAddress" placeholder="Dirección" name="DireccionVar" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo" #DireccionVar="ngModel" [(ngModel)]="email.DireccionVar"></textarea>
             </div>
 
 
             <div class="form-group">
                 <label for="inputExperience">Experiencia</label>
-                <textarea rows="3" type="text" class="form-control col-12" id="inputExperience" placeholder="Experiencia" name="EXPERIENCIA_VAR" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo"></textarea>
+                <textarea rows="3" type="text" class="form-control col-12" id="inputExperience" placeholder="Experiencia" name="ExperienciaVar" maxlength="200" minlength="30" pattern=".{30,}" required title="30 caracteres minimo" #ExperienciaVar="ngModel" [(ngModel)]="email.ExperienciaVar"></textarea>
             </div>
 
 
             <div class="form-row">
 
                 <div class="form-group col-8">
-                    <label for="inputAreaInteres">Área de interés</label>
-                    <select required id="inputAreaInteres" class="form-control" name="AREA_INTERES_VAR">
-                        <option value="" selected>--SELECCIONE--</option>
+                    <label for="SelectAreaInteres">Área de interés</label>
+                    <select required id="SelectAreaInteres" class="form-control" name="AreaInteresVar" #AreaInteresVar="ngModel" [(ngModel)]="email.AreaInteresVar">
+                        <option value="">--SELECCIONE--</option>
                         <option value="Administración">Administración</option>
                         <option value="Almacen">Almacen</option>
                         <option value="Caja">Caja</option>
@@ -73,8 +73,7 @@
 
                 <div class="form-group col-4">
                     <br />
-                    <input type="hidden" name="ORIGEN_VAR" value="Home/JoinOurWorkTeam" />
-                    <button type="submit" class="btn btn-primary mt-2 form-control" onclick="Add('/Home/Email')">Enviar</button>
+                    <button type="submit" class="btn btn-primary mt-2 form-control" >Enviar</button>
                 </div>
 
             </div>

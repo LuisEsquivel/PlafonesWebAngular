@@ -784,8 +784,9 @@ textarea {
     justify-content: flex-end;
     /*top: 70px;*/
 }
-.chosen-container-single, .chosen-search, .chosen-drop {
-
+.chosen-container-single, .chosen-search {
+    display:flex !important;
+    justify-content:flex-end !important;
 }
 
 
@@ -819,3 +820,4 @@ textarea {
       background-repeat:no-repeat !important;
       background-position: right !important;
   }
+

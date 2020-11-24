@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Services } from '../../services/services';
 import { EmailDto } from '../../models/email';
-import { global } from '../../services/global';
+import { generals } from '../../services/generals';
 declare var require: any ;
 import { SweetAlert } from 'sweetalert/typings/core';
 const swal: SweetAlert = require('sweetalert');
@@ -17,7 +17,7 @@ declare var $ :any;
 export class ContactoComponent implements OnInit {
 
   public email : EmailDto;
-  public g = new global(); 
+  public g = new generals(); 
 
   constructor(private service : Services
              )

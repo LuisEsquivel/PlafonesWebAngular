@@ -1,5 +1,5 @@
 
-export class global {
+export class generals {
 
     constructor(
    

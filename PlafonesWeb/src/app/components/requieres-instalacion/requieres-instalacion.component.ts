@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailDto } from '../../models/email';
 import { Services } from '../../services/services';
-import { global } from '../../services/global';
+import { generals } from '../../services/generals';
 declare var $ : any;
 declare var require: any ;
 import { SweetAlert } from 'sweetalert/typings/core';
@@ -18,13 +18,19 @@ const swal: SweetAlert = require('sweetalert');
 export class RequieresInstalacionComponent implements OnInit {
 
   public email : EmailDto;
-  public g = new global();
+  public g = new generals();
 
   constructor(private services : Services) {
        this.email = new EmailDto();    
    }
 
   ngOnInit(): void {
+
+    $(document).ready( () =>{
+    $("#form").removeClass("ng-invalid");
+    $("#form").removeClass("ng-untouched");
+    });
+
   }
 
 

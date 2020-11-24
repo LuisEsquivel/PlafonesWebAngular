@@ -1,7 +1,7 @@
 import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { Productos } from '../../models/productos';
 import { Services } from '../../services/services';
-import { global } from '../../services/global';
+import { generals } from '../../services/generals';
 declare var $:any;
 
 
@@ -15,10 +15,9 @@ declare var $:any;
 export class NavComponent implements OnInit {
 
   public productos : Productos[];
-  public g  = new global();
+  public g  = new generals();
 
   constructor(private services : Services) { }
-  
 
   ngOnInit(): void {
 
@@ -38,20 +37,22 @@ export class NavComponent implements OnInit {
         this.productos = []
       }
       
-
+  
     );
 
-
-
-    $(document).ready( () =>{
-      $(".myselect").chosenImage({
-        placeholder_text_single: "BUSCAR PRODUCTO",
-        no_results_text: "Oops, no se encontró: ",
-        width: "calc(100% - 71.5%)",
-        search_contains: true //para que busque si escribes espacios
-      });
-    });
-
   }
+
+
+  ngAfterViewInit() {
+
+      $(".myselect").chosenImage({
+                           placeholder_text_single: "BUSCAR PRODUCTO",
+                           no_results_text: "Oops, no se encontró: ",
+                           width: "calc(100% - 71.5%)",
+                           search_contains: true //para que busque si escribes espacios
+                       });
+              
+ }
+
 
 }

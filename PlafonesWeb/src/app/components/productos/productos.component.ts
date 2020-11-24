@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from '../../models/productos';
 import { Services } from '../../services/services';
-import { global } from '../../services/global';
+import { generals } from '../../services/generals';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-productos',
@@ -13,7 +14,7 @@ import { global } from '../../services/global';
 export class ProductosComponent implements OnInit {
 
   public productos: Productos[];
-  public g = new global();
+  public g = new generals();
 
   constructor(private services: Services) { }
 
@@ -38,10 +39,9 @@ export class ProductosComponent implements OnInit {
         this.productos = [];
       }
 
-
-
     );
 
+  
   }
 
 }

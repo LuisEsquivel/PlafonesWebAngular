@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sucursales } from '../../models/sucursales';
 import { Services } from '../../services/services';
-import { global } from '../../services/global';
+import { generals } from '../../services/generals';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -16,7 +16,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class SucursalesComponent implements OnInit {
 
   public sucursales: Sucursales[];
-  public g = new global();
+  public g = new generals();
 
   constructor(private services: Services,
               private dom : DomSanitizer) { }

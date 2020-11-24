@@ -1,5 +1,6 @@
 
 
+
 <div class="sticky-top">
 
 
@@ -18,8 +19,10 @@
 
                 <select class="myselect" name="searchFilter" id="searchFilter">
                    
-                     <option  *ngFor="let item of productos"  [data-img-src]="item.RutadefotoVar" [value]= "item.NomProdVar"  >  {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>
-    
+                    <option >--SELECT--</option>
+                    <option value="S">--SELECT2--</option>
+                     <option  *ngFor="let item of productos" [data-img-src]="item.RutadefotoVar" style="background-image:url('{{item.RutadefotoVar}}')"  [value]= "item.NomProdVar"  >   {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>
+                    
                 </select>
 
             </form>
