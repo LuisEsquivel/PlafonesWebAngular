@@ -19,12 +19,14 @@ export class Services {
     }
 
 
-    Post(url, email):Observable<any>{
+    Post(url, objeto):Observable<any>{
 
-        let objeto = JSON.stringify(email);
+        let o = JSON.stringify(objeto);
+        alert(o);
         let headers = new HttpHeaders().set("Content-Type" , "application/json")
-        return this.httpClient.post(url , objeto, {headers:headers});
+        return this.httpClient.post(url , o, {headers:headers});
 
     }
+
 
 }
