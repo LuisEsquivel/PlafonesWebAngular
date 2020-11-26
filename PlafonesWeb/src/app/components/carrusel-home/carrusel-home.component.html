@@ -4,45 +4,41 @@
     <div class="container-fluid">
 
 
-        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+ <div id="carousel-example" class="carousel slide" data-ride="carousel">
 
 
 
 <div class="carousel-inner row w-100 mx-auto mt-3 pr-5 pl-5" role="listbox" id="carousel-inner">
               
- <div class='carousel-item col-12 col-sm-12 col-md-4 col-lg-3' *ngFor="let item of productos" id="{{item.index}}">
+  
+ <div class="carousel-item col-12 col-sm-12 col-md-4 col-lg-3" *ngFor="let item of productos" [ngClass]="{'active': item.index==1}"  id="{{item.index}}">
 
-    <div class='card rounded' >
+    <div class="card rounded" >
 
-    <div class='card-img'>"
-    <img class='card-img-top img-fluid rounded'  src="{{item.RutadefotoVar}}"  style='cursor:pointer;'>
+    <div class="card-img">
+    <img class="card-img-top img-fluid rounded"  src="{{item.RutadefotoVar}}"  style="cursor:pointer;">
     </div>
 
-    <div class='card-body text-center'>
-    <button class='btn btn-danger btn-sm ' >
-    <img src='./assets/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png' width='40px' height='60px'>
-    </button>
+    <div class="card-body text-center">
     </div>
 
-    <div class='card-footer text-center'>
-    <div class='row'>
-    <a class='card-title btn letra-carousel col-sm-12' onmouseover='overStyle(this)' onmouseout='outStyle(this)'   style='cursor:pointer;' >{{item.NomProdVar}}</a>
-    <a class= 'letra-carousel col-sm-12' onmouseover='overStyle(this)' onmouseout='outStyle(this)'  style='cursor:pointer;' > $ {{item.CostoPromedioDec}} MXN IVA Incluido" + "</a>"
-
-    </div>
+    <div class="card-footer text-center">
+    <div class="row">
+    <a class="card-title btn letra-carousel col-sm-12" onmouseover="overStyle(this)" onmouseout="outStyle(this)"   style="cursor:pointer;" >{{item.NomProdVar}}</a>
+    <a class="letra-carousel col-sm-12" onmouseover="overStyle(this)" onmouseout="outStyle(this)"  style="cursor:pointer;" > $ {{item.CostoPromedioDec}} MXN IVA Incluido  </a>
 
     </div>
 
     </div>
+
+    </div>
+
 
 </div>
 
-
-</div>
 
 
      
-
 <div class="mr-5">
     <a class="carousel-control-prev mr-5" href="#carousel-example" role="button" data-slide="prev" style="width:30px;">
         <span aria-hidden="true"><img src="./assets/img/NewIndex/menor.png" class="img-fluid" /></span>
@@ -59,3 +55,36 @@
 
 </div>
 </div>
+</div>
+
+<script>
+
+$(document).ready( () => {
+
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+var $e = $(e.relatedTarget);
+
+var idx = $e.index();
+console.log("IDX :  " + idx);
+
+var itemsPerSlide = 8;
+var totalItems = $('.carousel-item').length;
+
+if (idx >= totalItems-(itemsPerSlide-1)) {
+    var it = itemsPerSlide - (totalItems - idx);
+    for (var i=0; i<it; i++) {
+        // append slides to end
+        if (e.direction=="left") {
+            $('.carousel-item').eq(i).appendTo('.carousel-inner');
+        }
+        else {
+            $('.carousel-item').eq(0).appendTo('.carousel-inner');
+        }
+    }
+}
+});
+
+});
+
+</script>

@@ -22,7 +22,6 @@ export class Services {
     Post(url, objeto):Observable<any>{
 
         let o = JSON.stringify(objeto);
-        alert(o);
         let headers = new HttpHeaders().set("Content-Type" , "application/json")
         return this.httpClient.post(url , o, {headers:headers});
 
