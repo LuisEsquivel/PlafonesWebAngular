@@ -21,6 +21,21 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    $(document).ready( () =>{
+      
+  /*
+      $(".myselect").chosenImage({
+                               placeholder_text_single: "BUSCAR PRODUCTO",
+                               no_results_text: "Oops, no se encontró: ",
+                               width: "calc(100% - 71.5%)",
+                               search_contains: true //para que busque si escribes espacios
+                           });
+  */
+  
+    } );
+
+
     this.services.Get(this.g.urlBase+this.g.productos+this.g.method).subscribe(
  
       res=>{
@@ -43,16 +58,6 @@ export class NavComponent implements OnInit {
   }
 
 
-  ngAfterViewInit() {
-
-      $(".myselect").chosenImage({
-                           placeholder_text_single: "BUSCAR PRODUCTO",
-                           no_results_text: "Oops, no se encontró: ",
-                           width: "calc(100% - 71.5%)",
-                           search_contains: true //para que busque si escribes espacios
-                       });
-              
- }
 
 
 }
