@@ -34,6 +34,8 @@ import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatIconModule, } from  '@angular/material/icon';
 import { MatListModule,  } from  '@angular/material/list';
 import { MatButtonModule } from  '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { ProductoDetalleComponent } from './components/producto-detalle/producto-detalle.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { MatButtonModule } from  '@angular/material/button';
     CarruselHomeComponent,
     AvisoPrivacidadComponent,
     UneteEquipoComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProductoDetalleComponent
+
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import { MatButtonModule } from  '@angular/material/button';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

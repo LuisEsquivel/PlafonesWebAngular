@@ -4,7 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+  })
 
 export class Services {
 
@@ -18,6 +20,14 @@ export class Services {
 
     }
 
+
+    GetByValues(url, objeto):Observable<any>{
+
+        let o = JSON.stringify(objeto);
+        let headers = new HttpHeaders().set("Content-Type" , "application/json")
+        return this.httpClient.post(url , o, {headers:headers});
+
+    }
 
     Post(url, objeto):Observable<any>{
 

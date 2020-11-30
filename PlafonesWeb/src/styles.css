@@ -818,11 +818,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
-.mat-select-arrow-wrapper:before{
-   content: "▼" !important;
-   font-size: 35px !important;
-}
+  .prods:after{
+    content: "  ▼" !important;
+    font-size: 17px !important;
+ }
 
-.mat-select-arrow {
-    opacity: 0;
-  }
+ .prods{
+  margin-bottom: 60px !important;
+ }
+
+ .icon-home{
+     padding-bottom: 60px !important;
+ }
+
+ .mat-menu-item{
+     color: #808080 !important;
+      font-weight: 500;
+     font-size: larger !important;
+ }

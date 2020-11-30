@@ -3,6 +3,7 @@ import { Productos } from '../../models/productos';
 import { Services } from '../../services/services';
 import { generals } from '../../services/generals';
 import { JsonPipe } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -13,14 +14,26 @@ import { JsonPipe } from '@angular/common';
 })
 export class ProductosComponent implements OnInit {
 
+  public producto : Productos;
   public productos: Productos[];
   public g = new generals();
 
-  constructor(private services: Services) { }
+  constructor(private services: Services, private router:Router, private activatedroute : ActivatedRoute) 
+  { this.producto = new Productos(); }
 
   ngOnInit(): void {
 
-    this.services.Get(this.g.urlBase+this.g.productos+this.g.method).subscribe(
+
+    this.activatedroute.params.subscribe( params => {
+
+      var clase = params['clase'] != null ? params['clase'] : null;
+      var subclase = params['subclase'] != null ? params['subclase'] : null;
+     
+
+  
+    this.producto.CveClaseVar = clase;
+    this.producto.CveSubclaseVar = subclase;
+    this.services.GetByValues(this.g.productosgetbyvalues, this.producto).subscribe(
 
       res => {
 
@@ -40,6 +53,10 @@ export class ProductosComponent implements OnInit {
       }
 
     );
+
+    
+  });
+     
 
   
   }

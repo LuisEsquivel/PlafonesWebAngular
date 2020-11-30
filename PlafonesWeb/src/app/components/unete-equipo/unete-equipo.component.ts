@@ -22,13 +22,10 @@ export class UneteEquipoComponent implements OnInit {
   public validators = new Validators();
   public myForm : FormGroup;
 
-  constructor(private service : Services, public fb: FormBuilder) {
+  constructor(private service : Services) {
     
     this.email = new EmailDto();  
-  
-    this.myForm = this.fb.group({
-      email: ['', [Validators.required]]
-    });
+ 
   }
 
   ngOnInit(): void {

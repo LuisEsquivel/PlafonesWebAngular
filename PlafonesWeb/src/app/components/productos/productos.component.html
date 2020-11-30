@@ -14,7 +14,7 @@
                 <figure class="card card-product">
 
                     <div class="img-wrap">
-                        <a href="~/Producto/Detalle/@item.URL_META_TAG_PROD_VAR">
+                        <a [routerLink]="['/producto-detalle', item.CveProdVar]">
                             <img src="{{item.RutadefotoVar}}" alt="{{item.DescripcionImagenVar}}" class="img-fluid">
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                     <figcaption class="info-wrap img-fluid">
                         <div class="row">
                             <div class="col">
-                                <a href="./assets/Producto/Detalle/@item.URL_META_TAG_PROD_VAR">
+                                <a [routerLink]="['/producto-detalle/', item.CveProdVar]">
                                     <h5 class="product-name">{{item.NomProdVar}}</h5>
                                 </a>
                             </div>

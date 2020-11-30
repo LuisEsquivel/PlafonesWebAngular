@@ -11,6 +11,7 @@ import {HomeComponent} from './components/home/home.component';
 import {AvisoPrivacidadComponent} from './components/aviso-privacidad/aviso-privacidad.component';
 import {UneteEquipoComponent} from './components/unete-equipo/unete-equipo.component';
 import {ProductosComponent} from './components/productos/productos.component';
+import {ProductoDetalleComponent} from './components/producto-detalle/producto-detalle.component';
 
 //Array de rutas
 const appRoutes: Routes =[
@@ -24,6 +25,8 @@ const appRoutes: Routes =[
     {path : 'aviso-de-privacidad', component:AvisoPrivacidadComponent},
     {path : 'unete-al-equipo', component:UneteEquipoComponent},
     {path : 'productos', component:ProductosComponent},
+    {path : 'productos/:clase/:subclase', component:ProductosComponent},
+    {path : 'producto-detalle/:CveProdVar', component:ProductoDetalleComponent},
     //Ruta de error debe de ser la última siempre
    // {path : '**', component:ErrorComponent}
  ]
