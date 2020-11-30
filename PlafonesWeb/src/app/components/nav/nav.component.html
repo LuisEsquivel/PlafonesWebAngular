@@ -1,9 +1,10 @@
 
 
+
 <div class="sticky-top">
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: #F08034 4px solid; font-size: 16px; color: #808080;">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-5" style="border-bottom: #F08034 4px solid; font-size: 16px; color: #808080; height: 90px;">
 
 
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,18 +14,28 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
+            
+        
+            <form class="form-inline mt-4 text-center mb-5" action="/Productos/GetProducts" method="post" id="search">
 
-            <form class="form-inline mt-4 text-center" action="/Productos/GetProducts" method="post" id="search">
 
+                <mat-form-field appearance="fill" class="myselect" name="searchFilter" id="searchFilter">
+                    <mat-select>
+                      <mat-option  *ngFor="let item of productos" [data-img-src]="item.RutadefotoVar"   [value]= "item.NomProdVar"  >   {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <!--
                 <select class="myselect" name="searchFilter" id="searchFilter">
                    
                      <option  *ngFor="let item of productos" [data-img-src]="item.RutadefotoVar" style="background-image:url('{{item.RutadefotoVar}}')"  [value]= "item.NomProdVar"  >   {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>
                     
                 </select>
+            -->
 
             </form>
 
-            <ul class="navbar-nav font-weight-bold h5 text-center">
+            <ul class="navbar-nav font-weight-bold h5 text-center mb-5">
                 <li class="nav-item active">
 
                     <a class="nav-link hvr-underline-reveal text-dark" [routerLink] = "['/home']">
@@ -37,15 +48,30 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add">
+
+            <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add pt-5">
   
 
 
-                <li ngbDropdown  class="nav-item dropdown mt-3">
-                    <a ngbDropdownToggle class="nav-link dropdown-toggle hvr-underline-reveal"  href='#' id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <mat-form-field appearance="fill" class="font-weight h5 text-center">
+                    <mat-label>Productos</mat-label>
+                    <mat-select>
+                      <mat-option>Todos</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+  
+                <!--
+
+                <li   class="nav-item dropdown mt-3">
+                    <a  class="nav-link dropdown-toggle hvr-underline-reveal"  href='target="_self"' id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Productos
                     </a>
-                    <ul ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color: #808080;">
+                    <ul   class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="color: #808080;">
                         <li><a class="dropdown-item font-weight-bold h5" style="color: #808080;" [routerLink] = "['/productos']">Todos</a></li>
 
                         <li class="dropdown-submenu">
@@ -60,7 +86,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS">Todos</a></li>
 
-                                <!--SOLO TABLEROS EXTERIORES Y ESTRUCTURALES-->
+                                
                                 <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS&SubClase=EXTERIORES">Exteriores</a></li>
                                 <li><a class="dropdown-item font-weight-bold h5" href="/Productos/Index?Clase=TABLEROS&SubClase=ESTRUCTURAL">Estructurales</a></li>
 
@@ -114,6 +140,11 @@
 
                     </ul>
                 </li>
+            -->
+
+
+
+
                 <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/sucursales']">Sucursales</a></li>
                 <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/contacto']">Contacto</a></li>
                 <li class="nav-item mt-3"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/requieres-instalacion']">¿Requieres Instalación?</a></li>
@@ -130,39 +161,4 @@
 
     </nav>
 
-
-
 </div>
-
-
-
-
-
-
-<script>
-
-$(document).ready( () => {
-
-    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
-        if (!$(this).next().hasClass('show')) {
-            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-        }
-        var $subMenu = $(this).next(".dropdown-menu");
-        $subMenu.toggleClass('show');
-
-
-        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
-            $('.dropdown-submenu .show').removeClass("show");
-        });
-
-
-        return false;
-    });
-
-
-
-    
-
-});
-
-</script>

@@ -26,6 +26,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxPopper } from 'angular-popper';
 
+//angular material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from  '@angular/material/sidenav';
+import { MatSelectModule } from  '@angular/material/select';
+import { MatToolbarModule } from  '@angular/material/toolbar';
+import { MatIconModule, } from  '@angular/material/icon';
+import { MatListModule,  } from  '@angular/material/list';
+import { MatButtonModule } from  '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -51,7 +59,14 @@ import { NgxPopper } from 'angular-popper';
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    NgxPopper
+    NgxPopper,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
