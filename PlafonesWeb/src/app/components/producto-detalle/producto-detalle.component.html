@@ -36,7 +36,7 @@
      <div class="row">
  
  
-         <div class="col-md-8 mt-5" *ngFor="let producto of productos">
+         <div class="col-md-8 mt-5" *ngFor="let producto of productos" >
  
              <div class="card" style="height:100%; overflow-y:scroll;">
                  <div class="row no-gutters">
@@ -53,63 +53,61 @@
                              <div id="caption"></div>
                          </div>
                      </div>
-                     <div class="col-md-8" style="height:100%;">
-                         <div class="card-body">
-                             <div class="card-title h5">
+                     
+                     <div class="col-md-8">
+                         <div class="card-body" style="height: 100% !important; width: 100% !important;">
+                             <div class="card-title h5 container">
                                  
                                          <div class="row">
-                                             <h4 class="font-weight-bold" style="color: #F08034; font-size: 19px;">
-                                               Producto
+                                             <h4 style="color: #F08034; font-size: 19px;">
+                                             Producto
                                              </h4>
-                                             <h4 class="ml-2 pt-sanz-text font-weight-bold">  {{producto.NomProdVar}} </h4>
+                                             <h4 class="ml-2 pt-sanz-text">{{producto.NomProdVar}}</h4>
                                          </div>
- 
- 
                               
                              </div>
                              
-                             <div class="card-text">
+                             <div class="container" > 
                                 
                                          <div class="row" *ngIf="producto.MarcaVar">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Marca: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Marca: </h5>
                                              <h5 class="ml-2 card-text pt-sanz-text">{{producto.MarcaVar}}</h5>
                                          </div>
-                                     
- 
+
+
                                          <div class="row" *ngIf="producto.CostoPromedioDec">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Precio: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Precio: </h5>
                                              <h5 class="ml-2 pt-sanz-text">  {{producto.CostoPromedioDec}}  MXN IVA Incluido.</h5>
                                          </div>
                                       
- 
+
                                          <div class="row" *ngIf="producto.UnidadMedidaVar">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Unidad de medida: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Unidad de medida: </h5>
                                              <h5 class="ml-2 pt-sanz-text"> {{producto.UnidadMedidaVar}} </h5>
                                          </div>
                                        
-                                     
                                         
                                          <div class="row" *ngIf="producto.AltoVar">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Alto: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Alto: </h5>
                                              <h5 class="ml-2 pt-sanz-text"> {{producto.AltoVar}} </h5>
                                          </div>
                                   
-                                
+      
                                          <div class="row" *ngIf="producto.EspesorVar">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Espesor: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Espesor: </h5>
                                              <h5 class="ml-2 pt-sanz-text"> {{producto.EspesorVar}} </h5>
                                          </div>
                                        
-                                  
+                                         
                                          <div class="row" *ngIf="producto.PesoDec">
-                                             <h5 class="font-weight-bold" style="color: #F08034; font-size: 19px;"> Peso: </h5>
+                                             <h5 style="color: #F08034; font-size: 19px;"> Peso: </h5>
                                              <h5 class="ml-2 pt-sanz-text"> {{producto.PesoDec}} KG.</h5>
                                          </div>
                                         
-                                   
-                                         <div *ngIf="producto.SugUsoVar">
+                                    
+                                         <div *ngIf="producto.SugUsoVar" class="container">
                                          <div>
-                                             <h5 class="text-center mt-2 font-weight-bold" style="color: #F08034; font-size: 19px;"> Sugerencia de uso: </h5>
+                                             <h5 class="text-center mt-2" style="color: #F08034; font-size: 19px;"> Sugerencia de uso: </h5>
                                          </div>
                                          <div class="row text-center">
                                              <h5 class=" pt-sanz-text"> {{producto.SugUsoVar}} </h5>
@@ -118,14 +116,14 @@
  
                              
                                     <div>
-                                     <input name="FichaTecnicaName" type="hidden" value="{{producto.FichaTecnicaUrlVar}}" />
-                                     <button class="btn btn-danger btn-sm mb-3" type="submit">
-                                         <img src="./assets/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="40" height="60">
-                                     </button>
+                             
+                                     <a class="btn btn-danger btn-sm mb-3" target="blank" [href]="producto.FichaTecnicaUrlVar">
+                                         <img src="./assets/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="40" height="60" >
+                                     </a>
                                     </div>
-                              </div>
+                             </div>
  
-                         </div>
+                            </div>
  
  
                      </div>
@@ -138,7 +136,7 @@
  
              <div class="row d-flex justify-content-center">
  
-                 <form id="form" class="w-100 ml-auto">
+                 <form id="form" class="w-100 ml-auto container" #DetalleProductoForm="ngForm" (ngSubmit)="onSumbit()" type="POST">
                      <div class="row">
  
                          <!-- <div class="FormaDeContactoDetallesProductos"> -->
@@ -149,33 +147,30 @@
                              <div class="form-group">
                                  <div>
                                      <h5> Nombre (requerido)</h5>
-                                     <input type="text" required size="50" maxlength="50" class="form-control" placeholder="Nombre" name="NOMBRE_VAR" />
+                                     <input type="text" required size="50" maxlength="50" class="form-control" placeholder="Nombre" name="NombreVar" #NombreVar="ngModel" [(ngModel)]="email.NombreVar" />
                                  </div>
                              </div>
                              <div class="form-group">
                                  <div>
                                      <h5>Email (requerido)</h5>
-                                     <input type="email" required size="80" maxlength="80" class="form-control" placeholder="Email" name="EMAIL_VAR" />
+                                     <input type="email" required size="80" maxlength="80" class="form-control" placeholder="Email" name="CorreoVar" #CorreoVar="ngModel" [(ngModel)]="email.CorreoVar" />
                                  </div>
                              </div>
                              <div class="form-group">
                                  <div>
                                      <h5>Teléfono</h5>
-                                     <input type="text" class="form-control soloNumeros" placeholder="Teléfono" name="TELEFONO_VAR" maxlength="15" minlength="8" pattern=".{8,}" title="8 caracteres minimo" />
+                                     <input type="text" class="form-control soloNumeros" placeholder="Teléfono" name="TelefonoVar" #TelefonoVar="ngModel" [(ngModel)]="email.TelefonoVar" maxlength="15" minlength="8" pattern=".{8,}" title="8 caracteres minimo" />
                                  </div>
                              </div>
                              <div class="form-group">
                                  <div>
                                      <h6>Mensaje</h6>
-                                     <textarea rows="3" type="text" class="form-control" placeholder="Mensaje" name="MENSAJE_VAR" maxlength="200" minlength="10" pattern=".{10,}" required title="10 caracteres minimo"></textarea>
+                                     <textarea rows="3" type="text" class="form-control" placeholder="Mensaje" name="MensajeVar" #MensajeVar="ngModel" [(ngModel)]="email.MensajeVar" maxlength="200" minlength="10" pattern=".{10,}" required title="10 caracteres minimo"></textarea>
                                  </div>
                              </div>
                              <div class="form-group">
                                  <div>
-                                     <input type="hidden" value="Productos/Details" name="ORIGEN_VAR" />
-                                     <input type="hidden" value="@Model.CVE_PROD_VAR" name="CVE_PROD_VAR" />
-                                     <input type="hidden" value="@Model.NOM_PROD_VAR" name="NOM_PROD_VAR" />
-                                     <button class="btn btn-danger" type="submit" onclick="Add('/Home/Email')">Enviar</button>
+                                     <button class="btn btn-danger" >Enviar</button>
                                  </div>
                              </div>
                          </div>

@@ -836,3 +836,210 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       font-weight: 500;
      font-size: larger !important;
  }
+
+
+ .center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+  .navbar {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+}
+
+.pt-sanz-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 33px;
+    color: #001049;
+}
+
+.pt-sanz-title-sucursales {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+}
+
+.pt-sanz-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 19px;
+    color: #808080;
+}
+
+.free-shipping {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    color: #808080;
+}
+
+.titles {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 33px;
+    color: #001049;
+}
+
+.letra-carousel {
+    font-family: 'PT Sans', sans-serif;
+    color: #808080;
+    font-size: 19px;
+}
+
+.phone {
+    font-family: 'PT Sans', sans-serif;
+    color: #F08034;
+    margin-top: -2%;
+    font-size: 19px;
+}
+
+.product-name {
+    font-family: 'PT Sans', sans-serif;
+    color: #808080;
+    font-size: 19px;
+}
+
+.price-product {
+    font-family: 'PT Sans', sans-serif;
+    color: #F08034;
+    font-size: 19px;
+}
+
+.Title-sections {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 33px;
+    color: #001049;
+}
+
+.title-cards {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    color: #808080;
+}
+
+.iconos-header {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 19px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu a::after {
+        transform: rotate(-90deg);
+        position: absolute;
+        right: 6px;
+        top: .8em;
+        display: none;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: .1rem;
+        margin-right: .1rem;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+
+.dropdown-item{
+    color: #808080;
+}
+
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='172C80' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='172C80' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.card-img{
+    align-items: center !important;
+}
+
+
+
+
+.hvr-underline-reveal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+    .hvr-underline-reveal:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #001049;
+        height: 4px;
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    .hvr-underline-reveal:hover:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:active:before {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+
+.link-footer:hover {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.7s;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .logo-plafones {
+        margin-top: 10%;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .logo-plafones {
+        margin-top: 2%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .logo-plafones {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-plafones {
+        margin-top: 3%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo-plafones {
+        margin-top: 3%;
+    }
+}

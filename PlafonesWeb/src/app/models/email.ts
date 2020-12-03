@@ -17,6 +17,7 @@ export class EmailDto{
         public EstadoVar : any = null,
         public AreaInteresVar : any = null,
         public ExperienciaVar : any = null,
+        public NombreProductoVar : any = null,
 
     ){
 

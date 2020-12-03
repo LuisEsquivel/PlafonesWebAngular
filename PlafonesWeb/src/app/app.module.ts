@@ -35,6 +35,8 @@ import { MatIconModule, } from  '@angular/material/icon';
 import { MatListModule,  } from  '@angular/material/list';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
+import { MatProgressBarModule  } from '@angular/material/progress-bar';
 import { ProductoDetalleComponent } from './components/producto-detalle/producto-detalle.component';
 
 @NgModule({
@@ -71,7 +73,9 @@ import { ProductoDetalleComponent } from './components/producto-detalle/producto
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

@@ -5,9 +5,24 @@
 
     <div class="containerIndex row my-flex-card">
 
-        <div class="col-md-12" style="border-bottom: #F08034 4px solid;">
-            <h2 class="Title-sections font-weight-bold">Productos</h2>
-        </div>
+
+
+      
+            
+           
+                <div class="col-md-12" style="border-bottom: #F08034 4px solid;" *ngIf="productos == null">
+                <h2 class="Title-sections font-weight-bold">Cargando...</h2>
+                <mat-progress-spinner mode="indeterminate" class="center mt-5 pt-5"></mat-progress-spinner>
+                </div>
+            
+
+  
+                <div class="col-md-12" style="border-bottom: #F08034 4px solid;" *ngIf="productos != null">
+                <h2 class="Title-sections font-weight-bold">Productos</h2>
+                </div>
+            
+           
+       
 
 
             <div class="col-lg-4 col-sm-6 card-bordes mt-4" *ngFor="let item of productos">

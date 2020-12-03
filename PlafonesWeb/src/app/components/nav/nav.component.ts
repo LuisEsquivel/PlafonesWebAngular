@@ -16,6 +16,7 @@ export class NavComponent implements OnInit {
 
   public productos : Productos[];
   public g  = new generals();
+  public navbarCollapsed = true;
 
   constructor(private services : Services) { }
 

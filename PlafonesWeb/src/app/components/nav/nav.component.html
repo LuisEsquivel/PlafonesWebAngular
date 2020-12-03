@@ -1,44 +1,39 @@
-
-
-
 <div class="sticky-top">
 
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-5" style="border-bottom: #F08034 4px solid; font-size: 16px; color: #808080; height: 120px;">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-5"
+        style="border-bottom: #F08034 4px solid; font-size: 16px; color: #808080; height: 100px;">
 
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <!--
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"  (click)="toggleNavbar()">>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        -->
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+            aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
 
             
-        
-            <form class="form-inline mt-4 text-center mb-5" action="/Productos/GetProducts" method="post" id="search">
+            
+            <form class="form-inline mt-4 text-center" action="/Productos/GetProducts" method="post" id="search">
 
-
-                <mat-form-field appearance="fill" class="myselect" name="searchFilter" id="searchFilter">
-                    <mat-select>
-                      <mat-option  *ngFor="let item of productos" [data-img-src]="item.RutadefotoVar"   [value]= "item.NomProdVar"  >   {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-
-                  <!--
-                <select class="myselect" name="searchFilter" id="searchFilter">
-                   
-                     <option  *ngFor="let item of productos" [data-img-src]="item.RutadefotoVar" style="background-image:url('{{item.RutadefotoVar}}')"  [value]= "item.NomProdVar"  >   {{item.NomProdVar}}  <br/> <strong>  * {{item.CveClaseVar}} * </strong>  </option>
-                    
+                <select class="icons" class="myselect" name="searchFilter" id="searchFilter">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option *ngFor="let item of productos" value="" data-icon="{{item.RutadefotoVar}}" class="left">{{item.NomProdVar}}</option>
                 </select>
-            -->
 
             </form>
+
+            
 
             <ul class="navbar-nav font-weight-bold h5 text-center icon-home">
                 <li class="nav-item active">
 
-                    <a class="nav-link hvr-underline-reveal text-dark" [routerLink] = "['/home']">
+                    <a class="nav-link hvr-underline-reveal text-dark" [routerLink]="['/home']">
                         <span style="color: #F08034;">
                             <i class="fa fa-home fa-2x"></i>
                             <br />
@@ -49,70 +44,76 @@
             </ul>
 
 
- <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add pt-5 mt-5">
-
-                    
-
-        <button mat-button [matMenuTriggerFor]="Productos" class="prods font-weight h5 text-center" >Productos</button>
-
-        <mat-menu #Productos="matMenu">
-        <button mat-menu-item class="mt-3" [routerLink]= "['/productos']">Todos</button>
-        <button mat-menu-item [matMenuTriggerFor]="Tablaroca">Tablaroca</button>
-        <button mat-menu-item [matMenuTriggerFor]="Tableros">Tableros</button>
-        <button mat-menu-item [matMenuTriggerFor]="PerfilesMetalicos">Perfiles Metalicos</button>
-        <button mat-menu-item [matMenuTriggerFor]="Plafones">Plafones</button>
-        <button mat-menu-item [matMenuTriggerFor]="Suspensiones">Suspensiones</button>
-        <button mat-menu-item [matMenuTriggerFor]="Complementos">Complementos</button>
-        <a mat-menu-item [routerLink]="['productos/' , 'RECUBRIMIENTOS', '']">Recubrimientos</a>
-        <a mat-menu-item [routerLink]="['productos/' , 'HERRAMIENTAS', '']">Herramientas</a>
-        </mat-menu>
-
-        <mat-menu #Tablaroca="matMenu">
-        <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'INTERIORES']">Interiores</a>
-        </mat-menu>
-
-        <mat-menu #Tableros="matMenu">
-        <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', '']">Todos</a>
-        <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'EXTERIORES']">Exteriores</a>
-        <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'ESTRUCTURAL']">Estructurales</a>
-        </mat-menu>
-
-        <mat-menu #PerfilesMetalicos="matMenu">
-            <a mat-menu-item [routerLink]="['productos/' , 'PERFIL', '']">Todos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'PERFIL',  'TABLEROS', 'LIGERO']">Ligeros</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'PERFIL', 'TABLEROS', 'ESTRUCTURAL']">Estructurales</a>
-        </mat-menu>
-
-        
-        <mat-menu #Plafones="matMenu">
-            <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES', '']">Todos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES',  '61X61']">61*61"</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES' , '61X122']">61*1.22"</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES' , 'ESPECIALIDADES', '']">Especialidades</a>
-        </mat-menu>
+            <ul class="navbar-nav mr-auto mt-lg-0 font-weight-bold h5 text-center padding-add pt-5 mt-5">
 
 
-        <mat-menu #Suspensiones="matMenu">
-            <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES', '']">Todos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES',  '15_16']">15/16"</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES', '9_16']">9/16"</a>
-        </mat-menu>
 
-        <mat-menu #Complementos="matMenu">
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', '']">Todos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'ADHESIVOS']">Adhesivos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'CINTAS_MALLAS']">Cintas</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'ACCESORIOS']">Accesorios</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'TORNILLOS']">Tornillos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'AISLAMIENTOS']">Aislamientos</a>
-            <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'TAQUETES']">Tquetes</a>
-        </mat-menu>
+                <button mat-button [matMenuTriggerFor]="Productos"
+                    class="prods font-weight h5 text-center">Productos</button>
+
+                <mat-menu #Productos="matMenu">
+                    <button mat-menu-item class="mt-3" [routerLink]="['/productos']">Todos</button>
+                    <button mat-menu-item [matMenuTriggerFor]="Tablaroca">Tablaroca</button>
+                    <button mat-menu-item [matMenuTriggerFor]="Tableros">Tableros</button>
+                    <button mat-menu-item [matMenuTriggerFor]="PerfilesMetalicos">Perfiles Metalicos</button>
+                    <button mat-menu-item [matMenuTriggerFor]="Plafones">Plafones</button>
+                    <button mat-menu-item [matMenuTriggerFor]="Suspensiones">Suspensiones</button>
+                    <button mat-menu-item [matMenuTriggerFor]="Complementos">Complementos</button>
+                    <a mat-menu-item [routerLink]="['productos/' , 'RECUBRIMIENTOS', '']">Recubrimientos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'HERRAMIENTAS', '']">Herramientas</a>
+                </mat-menu>
+
+                <mat-menu #Tablaroca="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'INTERIORES']">Interiores</a>
+                </mat-menu>
+
+                <mat-menu #Tableros="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', '']">Todos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'EXTERIORES']">Exteriores</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'TABLEROS', 'ESTRUCTURAL']">Estructurales</a>
+                </mat-menu>
+
+                <mat-menu #PerfilesMetalicos="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'PERFIL', '']">Todos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'PERFIL', 'LIGERO']">Ligeros</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'PERFIL', 'ESTRUCTURAL']">Estructurales</a>
+                </mat-menu>
 
 
-                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/sucursales']">Sucursales</a></li>
-                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/contacto']">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/requieres-instalacion']">¿Requieres Instalación?</a></li>
-                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink] = "['/rewards']">Rewards</a></li>
+                <mat-menu #Plafones="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES', '']">Todos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES',  '61X61']">61*61"</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'PLAFONES' , '61X122']">61*1.22"</a>
+                    <a mat-menu-item
+                        [routerLink]="['productos/' , 'PLAFONES' , 'ESPECIALIDADES', '']">Especialidades</a>
+                </mat-menu>
+
+
+                <mat-menu #Suspensiones="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES', '']">Todos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES',  '15_16']">15/16"</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'SUSPENSIONES', '9_16']">9/16"</a>
+                </mat-menu>
+
+                <mat-menu #Complementos="matMenu">
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', '']">Todos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'ADHESIVOS']">Adhesivos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'CINTAS_MALLAS']">Cintas</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'ACCESORIOS']">Accesorios</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'TORNILLOS']">Tornillos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'AISLAMIENTOS']">Aislamientos</a>
+                    <a mat-menu-item [routerLink]="['productos/' , 'COMPLEMENTOS', 'TAQUETES']">Taquetes</a>
+                </mat-menu>
+
+
+                <li class="nav-item"><a class="nav-link hvr-underline-reveal"
+                        [routerLink]="['/sucursales']">Sucursales</a></li>
+                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink]="['/contacto']">Contacto</a>
+                </li>
+                <li class="nav-item"><a class="nav-link hvr-underline-reveal"
+                        [routerLink]="['/requieres-instalacion']">¿Requieres Instalación?</a></li>
+                <li class="nav-item"><a class="nav-link hvr-underline-reveal" [routerLink]="['/rewards']">Rewards</a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -126,3 +127,11 @@
     </nav>
 
 </div>
+
+
+
+    <select class="icons">
+      <option value="" selected >Choose your option</option>
+      <option *ngFor="let item of productos" value="" [attr.data-icon]="item.RutadefotoVar" class="left">{{item.NomProdVar}}</option>
+    </select>
+

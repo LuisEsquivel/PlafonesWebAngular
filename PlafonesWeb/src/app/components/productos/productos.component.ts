@@ -41,6 +41,7 @@ export class ProductosComponent implements OnInit {
           this.productos = res.model;
           this.productos.map(item =>{
              item.RutadefotoVar = item.RutadefotoVar.replace("~","./assets");
+             item.index += 1;
           });
         } else {
           this.productos = [];
